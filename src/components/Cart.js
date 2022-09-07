@@ -56,7 +56,11 @@ const Cart = ({ state, dispatch }) => {
                     </div>
                 ))
             ) : (
-                <span style={{ padding: 20, alignSelf: "center" }}>Cart is Empty</span>
+                <img
+                    src={"https://professionalscareer.com/assets/images/emptycart.png"}
+                    alt="Cart is Empty"
+                    style={{ height: 150, alignSelf: "center" }}
+                />
             )}
         </div>
     );
