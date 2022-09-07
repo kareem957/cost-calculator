@@ -2,6 +2,7 @@ import React from "react";
 
 const Product = ({ state, dispatch }) => {
     const { products, cart } = state;
+    console.log(state);
     return (
         <div
             style={{
@@ -38,6 +39,14 @@ const Product = ({ state, dispatch }) => {
                                 borderRadius: 5,
                                 color: "white",
                             }}
+                            onClick={() =>
+                                dispatch({
+                                    type: "REMOVE_FROM_CART",
+                                    payload: {
+                                        id: prod.id,
+                                    },
+                                })
+                            }
                         >
                             Remove from Cart
                         </button>
@@ -50,6 +59,18 @@ const Product = ({ state, dispatch }) => {
                                 borderRadius: 5,
                                 color: "white",
                             }}
+                            onClick={() =>
+                                dispatch({
+                                    type: "ADD_TO_CART",
+                                    payload: {
+                                        id: prod.id,
+                                        title: prod.title,
+                                        qty: 1,
+                                        price: prod.price,
+                                        thumbnail: prod.thumbnail,
+                                    },
+                                })
+                            }
                         >
                             Add to Cart
                         </button>
